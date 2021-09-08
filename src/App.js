@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import animation from "./animation.json";
 import Lottie from "lottie-react-web";
 import "./App.css";
@@ -21,9 +21,10 @@ function App() {
             loop: false,
           }}
           animationControl={{
-            "GRAPH HIGHLIGHT,Transform,Position": [0, 213],
-            "SPECTRUM colour bar,Transform,Position": [x - 40, 410],
+            "GRAPH HIGHLIGHT,Transform,Position,shapes": [0, 0],
+            "wavelengthcontrol,Transform,Position": [x],
           }}
+          // segments={[y-1,y]}
         />
         {console.log(x, y)}
       </div>
@@ -34,14 +35,14 @@ function App() {
       <input
         type="range"
         min={0}
-        max={224}
+        max={50}
         value={x}
         onChange={onChange(setX)}
       />
       <input
         type="range"
-        min={0}
-        max={100}
+        min={1}
+        max={72}
         value={y}
         onChange={onChange(setY)}
       />
